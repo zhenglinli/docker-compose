@@ -1,0 +1,6 @@
+NC_mysql
+NC_nextcloud
+
+NC_nginx/ssl_certs/*.crt
+NC_nginx/ssl_certs/*.key
+

@@ -1,0 +1,8 @@
+build-java/python_dependency
+
+build-mysql/lenovo-data.sql
+build-mysql/lenovo-schema.sql
+
+lenovo-java/target
+
+lenovo-nginx/dist
