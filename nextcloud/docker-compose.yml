@@ -38,8 +38,8 @@ services:
     image: nginx
     container_name: NC_nginx
     ports:
-      - 80:80
-      - 443:443
+      - 88:80
+      # - 443:443
     volumes:
       - "${NEXTCLOUD_DIR}/html:/var/www/html"
       - "${NGINX_DIR}/conf.d:/etc/nginx/conf.d"
