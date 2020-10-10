@@ -3,7 +3,7 @@ version: "3"
 services:
 
   nextcloud:
-    image: nextcloud
+    image: nextcloud:stable-fpm-alpine
     container_name: NC_nextcloud
     volumes:
       - "${NEXTCLOUD_DIR}/html:/var/www/html"
