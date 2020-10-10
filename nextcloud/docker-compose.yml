@@ -36,7 +36,7 @@ services:
     image: nginx
     container_name: NC_nginx
     ports:
-      # - 80:80
+      - 80:80
       - 443:443
     volumes:
       - "${NEXTCLOUD_DIR}/html:/var/www/html"
