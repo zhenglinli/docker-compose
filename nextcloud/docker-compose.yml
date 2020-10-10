@@ -6,7 +6,7 @@ services:
     image: nextcloud:stable-fpm-alpine
     container_name: NC_nextcloud
     volumes:
-      - "${NEXTCLOUD_DIR}/html:/var/www/html"
+      - "${NEXTCLOUD_DIR}:/var/www/html"
     depends_on: 
       - mariadb
       - redis
@@ -19,8 +19,7 @@ services:
     image: mariadb
     container_name: NC_mariadb
     volumes:
-      - "${MYSQL_DIR}/conf.d:/etc/mysql/conf.d"
-      - "${MYSQL_DIR}/data:/var/lib/mysql"
+      - "${MYSQL_DIR}:/var/lib/mysql"
     environment: 
       - "MYSQL_ROOT_PASSWORD=nextcloud"
       - "MYSQL_DATABASE=nextcloud"
@@ -39,7 +38,7 @@ services:
       # - 80:80
       - 34430:443
     volumes:
-      - "${NEXTCLOUD_DIR}/html:/var/www/html"
+      - "${NEXTCLOUD_DIR}:/var/www/html"
       - "${NGINX_DIR}/conf.d:/etc/nginx/conf.d"
       - "${NGINX_DIR}/ssl_certs:/etc/nginx/ssl_certs"
     depends_on: 
