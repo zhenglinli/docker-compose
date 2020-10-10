@@ -34,19 +34,19 @@ services:
     restart: always
 
 
-  # nginx:
-  #   image: nginx
-  #   container_name: NC_nginx
-  #   ports:
-  #     - 80:80
-  #     - 443:443
-  #   volumes:
-  #     - "${NEXTCLOUD_DIR}/html:/var/www/html"
-  #     - "${NGINX_DIR}/conf.d:/etc/nginx/conf.d"
-  #     - "${NGINX_DIR}/ssl_certs:/etc/nginx/ssl_certs"
-  #   depends_on: 
-  #     - nextcloud
-  #   links:
-  #     - nextcloud
-  #   restart: always
+  nginx:
+    image: nginx
+    container_name: NC_nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - "${NEXTCLOUD_DIR}/html:/var/www/html"
+      - "${NGINX_DIR}/conf.d:/etc/nginx/conf.d"
+      - "${NGINX_DIR}/ssl_certs:/etc/nginx/ssl_certs"
+    depends_on: 
+      - nextcloud
+    links:
+      - nextcloud
+    restart: always
 
