@@ -3,10 +3,10 @@ version: "3"
 services:
 
   nextcloud:
-    image: nextcloud:stable-fpm-alpine
+    image: nextcloud
     container_name: NC_nextcloud
     ports:
-      - 88:9000
+      - 88:80
     volumes:
       - "${NEXTCLOUD_DIR}/html:/var/www/html"
     depends_on: 
