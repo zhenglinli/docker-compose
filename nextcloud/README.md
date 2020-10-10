@@ -3,7 +3,7 @@
 ## 自签名 ssl 证书
 
 ```bash
-# In Directory `./NC_nginx/ssl_certs
+# In Directory ./NC_nginx/ssl_certs
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./nginx-selfsigned.key -out ./nginx-selfsigned.crt
 ```
 
@@ -20,6 +20,7 @@ Email Address []:email@email.com
 ## 修改 host 或 ip
 
 ```bash
+# In file ./NC_nginx/cond.d/nextcloud.conf
 server {
     listen 80;
     listen [::]:80;
@@ -58,8 +59,7 @@ sudo docker-compose up -d
 
 ```bash
 # In file ./NC_nextcloud/config/config.php
-{
-    ...
+  ...
   'memcache.local' => '\\OC\\Memcache\\APCu',
   'memcache.locking' => '\\OC\\Memcache\\Redis',
   'redis' => array (
@@ -67,5 +67,4 @@ sudo docker-compose up -d
       'port' => '6379',
   ),
   ...
-}
 ```
